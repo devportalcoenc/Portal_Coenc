@@ -22,28 +22,15 @@ document.autentica.submit();
 }
 
 </script>
-
-  <script>
-  
+  <script>  
   function home(){ 
-
-
 }
-    
-  }
+      }
   function teste(){
-
   
   }
-  
-  
   </script>
 
-
-
-  
-  
-  
   
 </head>
  <body>
@@ -58,28 +45,14 @@ document.autentica.submit();
       </div>
        <!-- Futuramente pode ser feito implementação automatizada em php da barra-->
        <nav>
-        <div id="menu_container">
-       
-          <ul class="sf-menu" id="nav">
+        <div id="menu_container">      
+          <ul class="sf-menu" id="nav"> 
           
-          
-                      <!-- Aqui to fazendo teste e pode dar bosta -->
-                      
-                      
+                      <!-- Aqui to fazendo teste e pode dar bosta -->              
                       
             <li><a href="index.php?menu=home.php">Home</a></li>
-
-            
-
  <!-- poderia ser feito usando um href e na beta usar um $_get mas vai ficar feio -->
-            
-            
-	   <li>	<a href="index.php?menu=grade.php">Grade dos Curso</a></li>
-	
-
-	    
-	    
-	     
+	   <li>	<a href="index.php?menu=grade.php">Grade dos Curso</a></li>    
 	    <!-- Aqui to fazendo teste e pode dar bosta -->
             <li><a href="index.php?menu=professores.php">Professores</a></li>
             <li><a href="#">Teste</a>
