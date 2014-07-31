@@ -1,0 +1,40 @@
+.clearable{
+    position:relative;
+}
+.data_field{
+    padding-right:17px; /* add space for the 'x' icon*/
+}
+span.icon_clear{
+    position:absolute;
+    right:10px;    
+    display:none;
+
+    /* now go with the styling */
+    cursor:pointer;
+    color:#38468F;  
+    }
+    span.icon_clear:hover{
+        color:#f52;
+    }
+	
+.divTransparente{
+	position: fixed;
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.scrollDiv {
+    overflow-y: scroll;
+	overflow-x: hidden;
+    height:150px;
+}
+.cabecalho {
+	/* Firefox */
+	width: -moz-calc(100% - 17px);
+	/* WebKit */
+	width: -webkit-calc(100% - 17px);
+	/* Opera */
+	width: -o-calc(100% - 17px);
+	/* Standard */
+	width: calc(100% - 17px);
+}
