@@ -38,7 +38,8 @@
                 <thead>
                 <tr>
                     <th class="text-left">Título</th>
-                    <th class="text-left" style="width:200px" >Data de publicação</th>
+                    <th class="text-left">Categoria</th>
+					<th class="text-left" style="width:200px" >Data de publicação</th>
 					<th class="text-center" style="width:140px"></th>
                 </tr>
                 </thead>

@@ -49,6 +49,12 @@
 						 Tipos de usuário
 						</button>
 					</div>
+					
+					<div class="tile bg-blue" style="width: 200px">
+					   <button class="shortcut danger" style="width:100%; height: 100%" onclick="f_Navegar('categoria.php')">
+						 Categoria de publicações
+						</button>
+					</div>
 				<?php 
 				}
 				?>

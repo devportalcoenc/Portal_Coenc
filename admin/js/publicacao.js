@@ -7,6 +7,7 @@ function f_CarregarPublicacao(){
 	document.getElementById('tituloMsg').value	= publicacao[0].titulo;
 	CKEDITOR.instances.editor1.setData(texto);
 	document.getElementById('flagvisivel').checked=(publicacao[0].flagvisivel=='T');
+	document.getElementById("categoria").value	= publicacao[0].idcategoria;
 	f_ValidarBotoes();
 }
 
@@ -52,7 +53,13 @@ function f_GravarPublicacao(){
 	texto  = texto.replace(/&/gi, ".EcM.");
 	texto  = texto.split('+').join('.EcMS.');
 	texto  = texto.split('"').join('.EcMA.');
-
+	
+	categoria = document.getElementById("categoria").value;
+	if (categoria==0){
+		f_SetMsgPublicacao("Informe a categoria.");
+		document.getElementById('categoria').focus();
+		return;
+	}
 	titulo = document.getElementById('tituloMsg').value.trim();
 	
 	if (titulo.length==0){
@@ -75,7 +82,7 @@ function f_GravarPublicacao(){
 	var req = getXmlHttp();
 	req.open("POST", "publicacao_gravar.php", true);
 	req.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	args = "id="+idpublicacao+"&texto="+encodeURIComponent(texto)+"&titulo="+encodeURIComponent(titulo)+"&flagvisivel="+flagvisivel;
+	args = "id="+idpublicacao+"&texto="+encodeURIComponent(texto)+"&titulo="+encodeURIComponent(titulo)+"&flagvisivel="+flagvisivel+"&idcategoria="+categoria;
 	req.send(args);
 	req.onreadystatechange = retorno;
 	function retorno(){

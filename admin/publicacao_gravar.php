@@ -13,8 +13,8 @@
 	if ($id=='0'){
 		$id='null';
 	}
-	$sql = "INSERT INTO publicacao(idpublicacao, titulo, corpo_formatado, flagvisivel, idpessoa) values ($id, '$titulo', '$texto', '$flagvisivel', '$idpessoa')
-			ON DUPLICATE KEY UPDATE titulo='$titulo', corpo_formatado='$texto', flagvisivel='$flagvisivel'; ";
+	$sql = "INSERT INTO publicacao(idpublicacao, titulo, corpo_formatado, flagvisivel, idpessoa, idcategoria) values ($id, '$titulo', '$texto', '$flagvisivel', '$idpessoa', $idcategoria)
+			ON DUPLICATE KEY UPDATE titulo='$titulo', corpo_formatado='$texto', flagvisivel='$flagvisivel', idcategoria=$idcategoria; ";
 
 	
 	// inclui a pessoa no banco de dados
