@@ -1,78 +1,58 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+	session_start();
+	include "config.php";
+	include "conexao.php";
+	if (empty($_SESSION['logado'])) {
+		$_SESSION['logado'] = 'não';
+	}
+	$logado = $_SESSION['logado'];
+	if ($logado == 'sim') {
+		echo "<meta HTTP-EQUIV=\"Refresh\" CONTENT=\"0;URL=main.php\">";
+		die;
+	}
+
+	if (empty($_SESSION['idpessoa'])) {
+		$_SESSION['idpessoa'] = 0;
+	}
+	$idpessoa = $_SESSION['idpessoa'];
+?>
+
+<!doctype html>
+
 <head>
-  <title>Pagina de portugues</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <!-- modernizr enables HTML5 elements and feature detects -->
-  <script type="text/javascript" src="js/modernizr-1.5.min.js">
-  </script>
-  
-</head>
- <body>
-  <div id="main">
-    <header>
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.php">Centro Academico<span class="logo_colour"> Pagina teste</span></a></h1>
-          <h2>Desenvolvido por alunos</h2>
-        </div>
-      </div>
-       <!-- Futuramente pode ser feito implementação automatizada em php da barra-->
-       <nav>
-        <div id="menu_container">      
-          <ul class="sf-menu" id="nav"> 
-          
-                      <!-- Aqui to fazendo teste e pode dar bosta -->              
-                      
-            <li><a href="index.php?menu=home.php">Home</a></li>
- <!-- poderia ser feito usando um href e na beta usar um $_get mas vai ficar feio -->
-	   <li>	<a href="index.php?menu=grade.php">Grade dos Curso</a></li>    
-	    <!-- Aqui to fazendo teste e pode dar bosta -->
-            <li><a href="index.php?menu=professores.php">Professores</a></li>
-            <li><a href="#">Teste</a>
-	      <ul>
-		<li><a href="index.php?menu=examples.html">Exemplo</a></li>
-	     </ul>	     
-         <!--   <li><a href="#">Example Drop Down</a>
-              <ul>
-                <li><a href="#">Drop Down One</a></li>
-                <li><a href="#">Drop Down Two</a>
-                  <ul>
-                    <li><a href="#">Sub Drop Down One</a></li>
-                    <li><a href="#">Sub Drop Down Two</a></li>
-                    <li><a href="#">Sub Drop Down Three</a></li>
-                    <li><a href="#">Sub Drop Down Four</a></li>
-                    <li><a href="#">Sub Drop Down Five</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down Three</a></li>
-                <li><a href="#">Drop Down Four</a></li>
-                <li><a href="#">Drop Down Five</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.php">Contact Us</a></li>
-          </ul> -->
-        </div>
-      </nav>
-     </header>
-     <body>
-      <!-- aqui coloca-se uma chamada em php para uma nova pagina de auto implementação que sera determinada
-      quantos textos serão exibidos sobre novidades. -->
-      <?PHP
-      include ("beta.php") ;
-      ?>
-      </body>
-     <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('ul.sf-menu').sooperfish();
-    }
-  </script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Login - UTFPR</title>
+	<link rel="stylesheet" href="css/login_styles.css">
+	<link rel="shortcut icon" href="img/logo.png">
+	<script type="text/javascript" src="js/obj_getxmlhttp.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/redefinicao_senha.js"></script>
+</head>		
+	<body class="metro" style="font-family: 'Helvetica Neue', Helvetica, sans-serif;font-size: 12px;">
+		<?php include("cabecalho.php"); ?>
+		<br><br><br><br>
+		<h2 style="text-align: center">Login</h2>
+		<div id="container">
+			<form>
+			  <input id="email" type="email" placeholder="Email" autofocus onkeypress="f_KeyLogin(event.keyCode)" style="margin-top: 25px">
+			  <input id="senha" type="password"  placeholder="Senha" onkeypress="f_KeyLogin(event.keyCode)">
+			 <input type="button" value="Login" style="width:88%; padding-left: 0px; margin: 10px 19px 0px 0px" onclick="f_Logar()">		  
+			  <div style="text-align:center;" id="divMsg"><label style="visibility: hidden; text-align: center; position: absolute; margin-top: 35px; width:328px" id="msg"> </label></div>
+			  <div style="visibility: hidden" id="divCarregando">
+			    <img src="img/black.png" class="blackImg">
+			    <img src="img/carregando.gif" class="imgCarregando" >
+			  </div>
+			   <div style="width: 94%" align="right"><a  style="position: absolute; margin-top: 70px; margin-left: 200px;" href="#" onclick="f_RecuperarSenha()">Recuperar senha</a></div>
+			</form>		
+		</div>
+	</body>
 </html>
+	
+	
+	
+	
+	
+		
+	
