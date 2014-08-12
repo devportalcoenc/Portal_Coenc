@@ -10,6 +10,28 @@
   <script type="text/javascript" src="js/modernizr-1.5.min.js">
   </script>
   
+  
+  
+  <script>
+function limpa(objeto){ objeto.value="";}
+function reload(){
+document.autentica.recarrega.value="OK";
+document.autentica.sub_form.value="reload"
+document.autentica.submit();
+//window.location.reload()
+}
+
+</script>
+  <script>  
+  function home(){ 
+}
+      }
+  function teste(){
+  
+  }
+  </script>
+
+  
 </head>
  <body>
   <div id="main">
@@ -74,5 +96,27 @@
     $(document).ready(function() {
       $('ul.sf-menu').sooperfish();
     }
+  </script>
+  <script>
+  
+  function home(){ 
+ 
+   var objMeuId =  document.getElementById("meuid");
+
+  var objeMeuForm = document.getElementById("meuForm");
+
+  <?php $chamada='index.html'; ?>
+
+  return false; // cancela o submit do form
+
+}
+    
+  }
+  function teste(){
+
+  
+  }
+  
+  
   </script>
 </html>

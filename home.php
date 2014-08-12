@@ -1,3 +1,6 @@
+<?php
+include("dbconnect.php");
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -19,10 +22,21 @@
         </div>
         </div>
        <div class="content">
-       <h1>Aqui se faz a implementação automatica</h1>
-        <p>Esta faltando a implementação em php, o reinaldo ficou de apresentar o banco para que possa ser realizada.</p>
-        <p>Separado por paragrafo, apenas para fins demonstrativos.</p>
-        </div>
+<?php
+
+
+$sql = lersql("select * from publicacao order by idpublicacao DESC");
+while( $exibe = mysql_fetch_assoc($sql)):
+echo '<br><h1>';
+echo $exibe["titulo"];
+echo '</h1>';
+echo $exibe["corpo_formatado"];
+
+endwhile ;
+
+ 
+?>
+       </div>
       <div><p>&nbsp;</p></div>
     </div>
  
